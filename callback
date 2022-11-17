@@ -1,0 +1,11 @@
+#!/bin/sh
+sleep 5
+echo "Channel: Local/1222@callback
+MaxRetries: 3
+RetryTime: 10
+WaitTime: 10
+Context: callback
+Extension: 1111
+Priority: 1
+AlwaysDelete: Yes" >/var/spool/asterisk/tmp/tst.call
+mv /var/spool/asterisk/tmp/tst.call /var/spool/asterisk/outgoing/tst.call
