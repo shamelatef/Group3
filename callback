@@ -1,11 +1,11 @@
 #!/bin/sh
-sleep 5
-echo "Channel: Local/1222@callback
-MaxRetries: 3
-RetryTime: 10
+sleep 0
+echo "Channel: SIP/outside
+MaxRetries: 0
 WaitTime: 10
+RetryTime:10
 Context: callback
-Extension: 1111
-Priority: 1
-AlwaysDelete: Yes" >/var/spool/asterisk/tmp/tst.call
-mv /var/spool/asterisk/tmp/tst.call /var/spool/asterisk/outgoing/tst.call
+Extension: 1111 
+Priority: 1" >> /var/spool/asterisk/tmp/tst.call
+
+
