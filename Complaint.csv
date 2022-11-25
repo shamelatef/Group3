@@ -1,4 +1,13 @@
-Date,Time,Status
+Date,Time,Status,Queue
 2022/11/24,00:11,satisfied
 2022/11/24,00:14,satisfied
 2022/11/24,00:16,Unsatisfied
+2022/11/25,18:03,Unsatisfied
+2022/11/25,18:03,Unsatisfied
+2022/11/25,18:05,Unsatisfied
+2022/11/25,18:05,Unsatisfied
+2022/11/25,18:08,Unsatisfied
+2022/11/25,18:08,Unsatisfied
+2022/11/25,18:08,Unsatisfied
+2022/11/25,18:11,satisfied
+2022/11/25,18:21,satisfied,AR
