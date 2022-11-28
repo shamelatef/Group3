@@ -10,7 +10,7 @@ import subprocess
 
 
 window= Tk()
-window.geometry("700x400")
+window.geometry("1920x1080")
 
 
 tabControl = ttk.Notebook(window)
@@ -26,9 +26,8 @@ tabControl.pack(expand = 1, fill ="both")
 
 
 
-
 #background image#############################
-img = PhotoImage(file="Hacker-Thumb-a1.png")
+img = PhotoImage(file="/home/shamel/Downloads/Call-Center-Software-featured.png")
 label = Label(
     tab1,
     image=img
@@ -129,22 +128,22 @@ def submit():
     
 
 
-Header1 = Label(tab1,text = "Please, Put your info to be Registered in the SIP file",font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=150,y=10)
+Header1 = Label(tab1,text = "Please, Put your info to be Registered in the SIP file",font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=150,y=10)
 
 
 
 
-name_label = Label(tab1, text = '[Name]', font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=200,y=70)
+name_label = Label(tab1, text = '[Name]', font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=200,y=70)
 name_entry = Entry(tab1,textvariable = Name, font=('calibre',10,'normal'),bg="black",foreground="white").place(x=300,y=70)
 
 
-type_label = Label(tab1, text = 'type=', font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=200,y=110)
+type_label = Label(tab1, text = 'type=', font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=200,y=110)
 type_entry = Entry(tab1,textvariable = Type, font=('calibre',10,'normal'),bg="black",foreground="white").place(x=300,y=110)
 
-context_label = Label(tab1, text = 'context=', font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=200,y=150)
+context_label = Label(tab1, text = 'context=', font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=200,y=150)
 context_entry = Entry(tab1,textvariable = Context, font=('calibre',10,'normal'),bg="black",foreground="white").place(x=300,y=150)
 
-secret_label = Label(tab1, text = 'secret=', font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=200,y=190)
+secret_label = Label(tab1, text = 'secret=', font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=200,y=190)
 secret_entry = Entry(tab1,textvariable = Secret, font=('calibre',10,'normal'),show='*',bg="black",foreground="white").place (x=300,y=190)
 """
 host_label = Label(window, text = 'host=', font=('calibre',10, 'bold'),bg="black",foreground="white").place(x=150,y=230)
@@ -157,10 +156,10 @@ disallow_entry = Entry(window,textvariable = Disallow, font=('calibre',10,'norma
 allow_label = Label(window, text = 'allow=', font=('calibre',10, 'bold'),bg="black",foreground="white").place(x=150,y=310)
 allow_entry = Entry(window,textvariable = Allow, font=('calibre',10,'normal'),bg="black",foreground="white").place(x=250,y=310)
 """
-mailbox_label = Label(tab1, text = 'mailbox=', font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=200,y=230)
+mailbox_label = Label(tab1, text = 'mailbox=', font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=200,y=230)
 mailbox_entry = Entry(tab1,textvariable = MailBox, font=('calibre',10,'normal'),bg="black",foreground="white").place(x=300,y=230)
 
-submit_button=Button(tab1,text = 'Submit', command = submit,bg="skyblue").place(x=300,y=340)
+submit_button=Button(tab1,text = 'Submit', command = submit,bg="white").place(x=300,y=340)
 
 
 ##############################
@@ -169,7 +168,7 @@ submit_button=Button(tab1,text = 'Submit', command = submit,bg="skyblue").place(
 
 #TAB - 2
 
-Header2 = Label(tab2,text = "Simple Dial configuration in Extensions.conf",font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=180,y=10)
+Header2 = Label(tab2,text = "Simple Dial configuration in Extensions.conf",font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=180,y=10)
 
 def submit2():
     NewContext2=Context2.get()
@@ -188,9 +187,12 @@ def submit2():
                     data = f.read()
                     if (search) in data:
                         data = data.replace(search, replace_text)
+                        
                  with open(r'sayyad.txt', 'w') as file:
                      file.write(data)
                  print(replace_text)
+
+                
 
                  f.close()
                  Context2.set("")
@@ -221,27 +223,44 @@ def submit2():
         file.write(replace_text)
 """
 
-context2_label = Label(tab2, text = 'context', font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=200,y=70)
+context2_label = Label(tab2, text = 'context', font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=200,y=70)
 context2_entry = Entry(tab2,textvariable = Context2, font=('calibre',10,'normal'),bg="black",foreground="white").place(x=300,y=70)
 
-ext_label = Label(tab2, text = 'Extension', font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=200,y=110)
+ext_label = Label(tab2, text = 'Extension', font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=200,y=110)
 ext_entry = Entry(tab2,textvariable = Extension, font=('calibre',10,'normal'),bg="black",foreground="white").place(x=300,y=110)
 
-callerid_label = Label(tab2, text = 'Caller ID', font=('calibre',10, 'bold'),bg="skyblue",foreground="black").place(x=200,y=150)
+callerid_label = Label(tab2, text = 'Caller ID', font=('calibre',10, 'bold'),bg="white",foreground="black").place(x=200,y=150)
 callerid_entry = Entry(tab2,textvariable = Callerid, font=('calibre',10,'normal'),bg="black",foreground="white").place(x=300,y=150)
 
-submit_button2=Button(tab2,text = 'Submit', command = submit2,bg="skyblue").place(x=300,y=240)
+submit_button2=Button(tab2,text = 'Submit', command = submit2,bg="white").place(x=300,y=240)
 
 
 #TAB - 3
 
-def helloCallBack():
-    filename ="/var/log/asterisk/cdr-csv/Master.csv"
+def openCallLogFunc():
+    filename1 ="/var/log/asterisk/cdr-csv/Master.csv"
     opener = "open" if sys.platform == "darwin" else "xdg-open"
-    subprocess.call([opener, filename])
+    subprocess.call([opener, filename1])
     #Keep_both_files_in_the_same_Folder
-b1=tk.Button(tab3, text="Call Logs",bg="skyblue",command=helloCallBack)
-b1.place(x=310,y=150)
+
+def openComplaintsFunc():
+    filename2 ="/etc/asterisk/Complaint.csv"
+    opener = "open" if sys.platform == "darwin" else "xdg-open"
+    subprocess.call([opener, filename2])
+    #Keep_both_files_in_the_same_Folder
+
+def openQueue_Func():
+    filename3 ="/etc/asterisk/Queue.csv"
+    opener = "open" if sys.platform == "darwin" else "xdg-open"
+    subprocess.call([opener, filename3])
+    #Keep_both_files_in_the_same_Folder
+
+b1=tk.Button(tab3, text="Call Log",bg="white",command=openCallLogFunc)
+b2=tk.Button(tab3, text="Complaints Log",bg="white",command=openComplaintsFunc)
+b3=tk.Button(tab3, text="Queue Log",bg="white",command=openQueue_Func)
+b1.place(x=310,y=120)
+b2.place(x=310,y=170)
+b3.place(x=310,y=220)
 
 
 
