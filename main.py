@@ -182,17 +182,38 @@ def submit2():
             msg = 'At least one label field is empty'
     else:
             try:              
-               
-                 with open(r'sayyad.txt', 'r+') as f:
-                    data = f.read()
-                    if (search) in data:
-                        data = data.replace(search, replace_text)
+                 if (NewContext2=="Agent"):
+                     with open(r'sayyad.txt', 'r+') as f:
+                        data = f.read()
+                        if (search) in data:
+                         data = data.replace(search, replace_text)
                         
-                 with open(r'sayyad.txt', 'w') as file:
-                     file.write(data)
-                 print(replace_text)
+                     with open(r'sayyad.txt', 'w') as file:
+                        file.write(data)
 
-                
+                     with open(r'sayyad.txt', 'r+') as f:
+                        data = f.read()
+                        if ("[Manager]") in data:
+                         data = data.replace("[Manager]", "[Manager]\n"+ "exten => "+NewExtension +",Dial(SIP/"+NewCallerid+")\n" + "same => n,Hangup()\n\n")
+                        
+                     with open(r'sayyad.txt', 'w') as file:
+                        file.write(data)
+
+                     with open(r'sayyad.txt', 'r+') as f:
+                        data = f.read()
+                        if ("[CEO]") in data:
+                         data = data.replace("[CEO]", "[CEO]\n"+ "exten => "+NewExtension +",Dial(SIP/"+NewCallerid+")\n" + "same => n,Hangup()\n\n")
+                        
+                     with open(r'sayyad.txt', 'w') as file:
+                        file.write(data) 
+
+                     with open(r'sayyad.txt', 'r+') as f:
+                        data = f.read()
+                        if ("[Tech-Sup]") in data:
+                         data = data.replace("[Tech-Sup]", "[Tech-Sup]\n"+ "exten => "+NewExtension +",Dial(SIP/"+NewCallerid+")\n" + "same => n,Hangup()\n\n")
+                        
+                     with open(r'sayyad.txt', 'w') as file:
+                        file.write(data)            
 
                  f.close()
                  Context2.set("")
