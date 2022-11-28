@@ -4,8 +4,9 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 import pygame
-
-
+import sys
+import os
+import subprocess
 
 
 window= Tk()
@@ -15,9 +16,12 @@ window.geometry("700x400")
 tabControl = ttk.Notebook(window)
 tab1 = ttk.Frame(tabControl)
 tab2 = ttk.Frame(tabControl)
+tab3 = ttk.Frame(tabControl)
 
 tabControl.add(tab1, text ='SIP')
 tabControl.add(tab2, text ='Extensions')
+tabControl.add(tab3, text ='Logs')
+
 tabControl.pack(expand = 1, fill ="both")
 
 
@@ -35,8 +39,17 @@ label2 = Label(
     image=img
 )
 
+label3 = Label(
+    tab3,
+    image=img
+)
+
+
+
 label.place(x=0, y=0)
 label2.place(x=0,y=0)
+label3.place(x=0, y=0)
+
 #################################################
 
 pygame.mixer.init()
@@ -220,6 +233,34 @@ callerid_entry = Entry(tab2,textvariable = Callerid, font=('calibre',10,'normal'
 submit_button2=Button(tab2,text = 'Submit', command = submit2,bg="skyblue").place(x=300,y=240)
 
 
+#TAB - 3
+
+def helloCallBack():
+    filename ="/var/log/asterisk/cdr-csv/Master.csv"
+    opener = "open" if sys.platform == "darwin" else "xdg-open"
+    subprocess.call([opener, filename])
+    #Keep_both_files_in_the_same_Folder
+b1=tk.Button(tab3, text="Call Logs",bg="skyblue",command=helloCallBack)
+b1.place(x=310,y=150)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 """
 Header1.grid(row=0, column=1)
@@ -253,3 +294,4 @@ mailbox_entry.grid(row=16,column=2)
 submit_button.grid(row=18,column=2)
 """
 window.mainloop()
+
